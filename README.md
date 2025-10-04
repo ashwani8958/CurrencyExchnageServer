@@ -73,6 +73,17 @@ The server listens on port `8090` by default. Endpoints are mounted under `/exch
 - Router-level logs are printed to the console by `Routes/exchange.js`.
 - For production use, consider adding proper error logging, rate limiting, caching, and using a robust schema validator (e.g. Joi or Zod).
 
-## License
+The server listens on port `8090` by default and binds to `127.0.0.1` by default.
 
-See `LICENSE` in the repository root.
+You can customize the host, port and the base path where exchange routes are mounted using a `.env` file (the project includes `.env.example`). The following environment variables are supported:
+
+- `HOST` — IP address or hostname the server should bind to (default: `127.0.0.1`). Use `0.0.0.0` to listen on all interfaces.
+- `PORT` — port number the server listens on (default: `8090`).
+
+Example `.env` (copy from `.env.example`):
+
+```
+HOST=0.0.0.0
+PORT=8090
+```
+## License
