@@ -6,6 +6,7 @@ async function getUSDExchangeRate() {
     return response.data;
   } catch (err) {
     console.error('Error fetching API data:', err);
+    throw { message: "The service is currently down, please check again later" };
   }
 }
 
@@ -15,6 +16,7 @@ async function getCustomExchangeRate(baseCurrency) {
     return response.data;
   } catch (err) {
     console.error('Error fetching API data:', err);
+    throw { message: "The service is currently down, please check again later" };
   }
 }
 
